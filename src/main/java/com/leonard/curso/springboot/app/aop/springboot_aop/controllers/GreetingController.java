@@ -15,6 +15,7 @@ public class GreetingController {
     @Autowired
     private GreetingService greetingService;
 
+    
     @GetMapping("/greeting")
     public ResponseEntity<?> greeting() {
         return ResponseEntity.ok(Collections.singletonMap("greating", greetingService.sayHello("leonard", "como vas")));
