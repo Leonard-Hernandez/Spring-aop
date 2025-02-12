@@ -34,7 +34,6 @@ public class GreetingAspect {
         logger.info("after method: " + method + ", args: " + args);
     }
 
-    
     @AfterReturning("execution(String com.leonard.curso.springboot.app.aop.springboot_aop.services.GreetingService.*(..))")
     public void loggerReturning(JoinPoint joinPoint) {
         String method = joinPoint.getSignature().getName();
@@ -42,7 +41,6 @@ public class GreetingAspect {
         logger.info("afterReturn method: " + method + ", args: " + args);
     }
 
-    
     @AfterThrowing("execution(String com.leonard.curso.springboot.app.aop.springboot_aop.services.GreetingService.*(..))")
     public void loggerThrowing(JoinPoint joinPoint) {
         String method = joinPoint.getSignature().getName();
@@ -51,7 +49,7 @@ public class GreetingAspect {
     }
 
     @Around("execution(String com.leonard.curso.springboot.app.aop.springboot_aop.services.GreetingService.*(..))")
-    public Object loggerAround(ProceedingJoinPoint joinPoint) throws Throwable{
+    public Object loggerAround(ProceedingJoinPoint joinPoint) throws Throwable {
         String method = joinPoint.getSignature().getName();
         String args = Arrays.toString(joinPoint.getArgs());
 
