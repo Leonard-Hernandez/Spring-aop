@@ -20,17 +20,17 @@ public class GreetingFooAspect {
     private Logger logger = LoggerFactory.getLogger(GreetingFooAspect.class);
 
     @Pointcut("execution(String com.leonard.curso.springboot.app.aop.springboot_aop.services.GreetingService.*(..))")
-    private void greetingLoggerPointCut() {
+    private void greetingFooLoggerPointCut() {
     }
 
-    @Before("greetingLoggerPointCut()")
+    @Before("greetingFooLoggerPointCut()")
     public void loggerBefore(JoinPoint joinPoint) {
         String method = joinPoint.getSignature().getName();
         String args = Arrays.toString(joinPoint.getArgs());
         logger.info("method: " + method + ", invoke args: " + args);
     }
 
-    @After("greetingLoggerPointCut()")
+    @After("greetingFooLoggerPointCut()")
     public void loggerAfter(JoinPoint joinPoint) {
         String method = joinPoint.getSignature().getName();
         String args = Arrays.toString(joinPoint.getArgs());
